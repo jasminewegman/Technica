@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Insurance Prediction AI</title>
+</head><link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+<body class="bg-light">
+    <a href="/about" class="button">Go to About Page</a>
+        <div class="container">
+            <div class="row justify-content-center mt-5">
+                <div class="col-md-6">
+                    <h1 class="text-center mb-4">Health Insurance Cost Prediction AI</h1>
+                    <form id="pred_form" action="/predict" method="POST" class="p-4 bg-white rounded shadow">
+                        <div class="form-group">
+                            <label for="age">Age:</label>
+                            <input required type="number" id="age" name="age" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="sex">Sex:</label>
+                            <select id="sex" name="sex" class="form-control">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="bmi">BMI:</label>
+                            <input required type="number" id="bmi" name="bmi" step=".1" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="children">Number of Dependents (Children):</label>
+                            <input required type="number" id="children" name="children" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="smoker">Do you smoke?</label>
+                            <select id="smoker" name="smoker" class="form-control">
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="region">Region of Residence:</label>
+                            <select id="region" name="region" class="form-control">
+                                <option value="northeast">Northeast</option>
+                                <option value="northwest">Northwest</option>
+                                <option value="southeast">Southeast</option>
+                                <option value="southwest">Southwest</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Predict</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+    <br>
+    <br>
+    <br>
+    <h5>Credits:</h5>
+        <p>Kaggle Data: <a href="https://www.kaggle.com/datasets/willianoliveiragibin/healthcare-insurance">Healthcare Insurance Data</a></p>
+        <p>Bootstrap: <a href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">Framework</a></p>
+        
+    </body>
+</html>
